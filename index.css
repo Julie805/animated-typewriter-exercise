@@ -1,0 +1,39 @@
+
+/* declares the variable in CSS. Here it is the color used by the cursor below.  */
+:root {
+--cursor-color: black
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  display: inline-block;
+  font-size: 20px;
+}
+/* animation is coupling both key frames, separating with commas */
+.typed {
+  border-right: 2px solid var(--cursor-color);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing, blinking;
+  animation-duration: 1.5s, 1s;
+  animation-timing-function: steps(20, end); /* number of steps per number of letters including white space */
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+
+
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%}
+}
+
+@keyframes blinking {
+  0% {border-right-color: transparent}
+  50% {border-right-color: var(--cursor-color)}
+  100% {border-right-color: transparent}
+}
